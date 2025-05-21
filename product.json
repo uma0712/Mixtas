@@ -1,0 +1,238 @@
+[
+{
+    "id":1,
+    "Productname":"hoodie",
+    "Price":2000,
+    "image":"images/popula-products (1).png",
+    "Producttext":"Classic Small Logo Sweatpants, black"
+
+},
+{
+    "id":2,
+    "Productname":"men",
+        "Price":550.00,
+    "image":"images/popula-products (2).png",
+    "Producttext":"Classic Small Logo Sweatpants, black"
+},
+
+{
+    "id":3,
+    "Productname":"men",
+    "Price":160,
+    "image":"images/popula-products (3).png",
+    "Producttext":"Classic Small Logo Sweatpants, black"
+},
+{
+    "id":4,
+    "Productname":"sweatshirt",
+    "Price":1500,
+    "image":"images/popula-products (4).png",
+    "Producttext":"Classic Small Logo Sweatpants, black"
+},
+{
+    "id":5,
+    "Productname":"others",
+    "Price":1000,
+    "image":"images/popula-products (5).png",
+    "Producttext":"Classic Small Logo Sweatpants, black"
+},
+{
+    "id":6,
+    "Productname":"others",
+    "Price":1000,
+    "image":"images/popula-products (6).png",
+    "Producttext":"Classic Small Logo Sweatpants, black"
+},
+{
+    "id":7,
+    "Productname":"men",
+    "Price":1000,
+    "image":"images/popula-products (7).png",
+    "Producttext":"Classic Small Logo Sweatpants, black"
+},
+{
+    "id":8,
+    "Productname":"sweatshirt",
+    "Price":1000,
+    "image":"images/popula-products (8).png",
+    "Producttext":"Classic Small Logo Sweatpants, black"
+},
+{
+    "id":9,
+    "Productname":"jacket",
+    "Price":1000,
+    "image":"images/popula-products (9).png",
+    "Producttext":"Classic Small Logo Sweatpants, black"
+},
+{
+    "id":10,
+    "Productname":"hoodie",
+    "Price":1000,
+    "image":"images/popula-products (10).png",
+    "Producttext":"Classic Small Logo Sweatpants, black"
+},
+{
+    "id":11,
+    "Productname":"hoodie",
+    "Price":1000,
+    "image":"images/popula-products (11).png",
+    "Producttext":"Classic Small Logo Sweatpants, black"
+
+},
+{
+    "id":12,
+    "Productname":"sweatshirt",
+        "Price":450.00,
+    "image":"images/popula-products (12).png",
+    "Producttext":"Classic Small Logo Sweatpants, black"
+},
+
+{
+    "id":13,
+    "Productname":"sweatshirt",
+    "Price":160,
+    "image":"images/popula-products (13).png",
+    "Producttext":"Classic Small Logo Sweatpants, black"
+},
+{
+    "id":14,
+    "Productname":"men",
+    "Price":1000,
+    "image":"images/popula-products (14).png",
+    "Producttext":"Classic Small Logo Sweatpants, black"
+},
+{
+    "id":15,
+    "Productname":"men",
+    "Price":1000,
+    "image":"images/popula-products (15).png",
+    "Producttext":"Classic Small Logo Sweatpants, black"
+},
+{
+    "id":16,
+    "Productname":"others",
+    "Price":1000,
+    "image":"images/popula-products (16).png",
+    "Producttext":"Classic Small Logo Sweatpants, black"
+},
+{
+    "id":17,
+    "Productname":"others",
+    "Price":1000,
+    "image":"images/popula-products (17).png",
+    "Producttext":"Classic Small Logo Sweatpants, black"
+},
+{
+    "id":18,
+    "Productname":"men",
+    "Price":1000,
+    "image":"images/popula-products (18).png",
+    "Producttext":"Classic Small Logo Sweatpants, black"
+},
+{
+    "id":19,
+    "Productname":"hoodie",
+    "Price":1000,
+    "image":"images/popula-products (19).png",
+    "Producttext":"Classic Small Logo Sweatpants, black"
+},
+{
+    "id":20,
+    "Productname":"jacket",
+    "Price":1000,
+    "image":"images/popula-products (20).png",
+    "Producttext":"Classic Small Logo Sweatpants, black"
+},
+{
+    "id":21,
+    "Productname":"sweatshirt",
+    "Price":1000,
+    "image":"images/popula-products (21).png",
+    "Producttext":"Classic Small Logo Sweatpants, black"
+
+},
+{
+    "id":22,
+    "Productname":"jacket",
+        "Price":450.00,
+    "image":"images/popula-products (22).png",
+    "Producttext":"Classic Small Logo Sweatpants, black"
+},
+
+{
+    "id":23,
+    "Productname":"jacket",
+    "Price":160,
+    "image":"images/popula-products (23).png",
+    "Producttext":"Classic Small Logo Sweatpants, black"
+},
+{
+    "id":24,
+    "Productname":"hoodie",
+    "Price":1000,
+    "image":"images/popula-products (24).png",
+    "Producttext":"Classic Small Logo Sweatpants, black"
+},
+{
+    "id":25,
+    "Productname":"jacket",
+    "Price":1000,
+    "image":"images/popula-products (25).png",
+    "Producttext":"Classic Small Logo Sweatpants, black"
+},
+{
+    "id":26,
+    "Productname":"jacket",
+    "Price":1000,
+    "image":"images/popula-products (26).png",
+    "Producttext":"Classic Small Logo Sweatpants, black"
+},
+{
+    "id":27,
+    "Productname":"others",
+    "Price":1000,
+    "image":"images/popula-products (27).png",
+    "Producttext":"Classic Small Logo Sweatpants, black"
+},
+{
+    "id":28,
+    "Productname":"sweatshirt",
+    "Price":1000,
+    "image":"images/popula-products (28).png",
+    "Producttext":"Classic Small Logo Sweatpants, black"
+},
+{
+    "id":29,
+    "Productname":"men",
+    "Price":1000,
+    "image":"images/popula-products (29).png",
+    "Producttext":"Classic Small Logo Sweatpants, black"
+},
+{
+    "id":30,
+    "Productname":"men",
+    "Price":1000,
+    "image":"images/popula-products (30).png",
+    "Producttext":"Classic Small Logo Sweatpants, black"
+},
+{
+    "id":31,
+    "Productname":"jacket",
+    "Price":1000,
+    "image":"images/popula-products (31).png",
+    "Producttext":"Classic Small Logo Sweatpants, black"
+},{
+    "id":32,
+    "Productname":"men",
+    "Price":1000,
+    "image":"images/popula-products (32).png",
+    "Producttext":"Classic Small Logo Sweatpants, black"
+},
+{
+    "id":33,
+    "Productname":"sweatshirt",
+    "Price":1000,
+    "image":"images/popula-products (4).png",
+    "Producttext":"Classic Small Logo Sweatpants, black"
+}
+]

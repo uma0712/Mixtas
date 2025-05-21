@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="images/vite.svg" />
+    <title>Mixtas</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link href="images/_variables.scs" rel="stylesheet/scss" type="text/css">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<style>
+
+#cartul li{
+    display: flex;
+    justify-content: space-between;
+    margin: 3px 0;
+    border: 1px solid #ddd7d7;
+    padding: 5px;
+}
+.quantity
+{
+    border: 1px solid rgb(255, 255, 255);
+    
+    height: 28px;
+    cursor: pointer;
+}
+.quantity span
+{
+   padding: 5px;
+   background-color: #7c7b79;
+   margin: 0;
+  color: #fcfcf6;
+}
+#addcart
+{
+  display: none;
+}
+#card{
+  width: 16rem !important;
+}
+.card-body
+{
+  padding:8px;
+}
+@media only screen and (max-width: 600px) and (min-width: 100px)  {
+  .filterDi .card{
+width: max-content!important;
+  }
+  #h6{
+display: none;
+  }
+ .accord{
+flex-direction: row!important;
+  }
+
+
+
+}
+</style>
+
+
+
+
+<body onload="filterSelection('all')">
+  <!-- navstart -->
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light ">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html"><img src="images/logo.png" style="width:10rem;"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto 5 mb-2 mb-lg-0 ms-5">
+            <li class="nav-item"> <a class="nav-link active" aria-current="page" href="index.html">Home</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="shop.html">Products</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="#footer">Contact Us</a> </li>
+          </ul>
+        </div>
+        <div class="d-flex justify-content-end">
+          <span class="nav-link active mx-0" aria-current="page" href="#"><img src="images/Icon (1).png" width="24">
+          </span>
+          <span class="nav-link active mx-0" aria-current="page" href="#"><img src="images/Icon (5).png" width="25"></span>
+          
+
+       <span class="nav-link active mx-0 bicon1" aria-current="page" href="#">
+            <button style="border:0 ; background:none;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="images/Icon (3).png" width="28">
+            <sup class="bg-darktext-white rounded-circle badge bg-dark icon-cart" id="icon-cart" style=" font-size: xx-small;"><span>1</span></sup>
+          </button></span>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRight">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title icon-cartt" id="offcanvasExampleLabel">SHOPPING CART  <sup>
+                <span class="rounded-circle badge bg-light text-dark " style=" font-size: small;">1</span></sup>
+                </h5>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              
+            </div>
+            <hr>
+            <div class="offcanvas-body">
+                
+                <ul id="cartul" class="list-group list-inline-item listCart"><li class="item" data-id="1">
+            <div class="colmn">
+             <div class="image">
+                    <img src="images/popula-products (1).png" width="100px">
+                </div>
+               
+                </div>
+                <div class="colmn">
+             <div class="name fs-6 text-uppercase">
+                hoodie
+                </div>
+                <p class="fs-6">Black</p>
+                <div>Total: $<span class="totalPrice" id="totalPrice">1000<span></span></span></div> 
+                </div>
+                <div class="quantity"><br>
+                    <span class="minus"> -</span>
+                    <span style="background-color:#fff; color:#555;"id="quantity">1</span>
+                    <span class="plus">+</span>
+                    </div>  <br><br>
+            </li></ul>
+        </div>
+               <hr>
+        
+                  <div class="offcanvas-footer" style="display: block;">
+                 
+                    <!-- <div style="display:flex; padding: 0 10px; justify-content: space-between;">
+                        <div><h5>SUBTOTAL:</h5></div>
+                        <div><h5><span id="subtotal"></span>></h5></div>
+                       
+                      </div>
+                      <hr> -->
+                      <div style="display: flex;  justify-content: space-evenly;">
+                    <button type="button" class="btn btn-light">close</button>
+                    <button type="button" class="btn btn-dark">Check out</button>
+                </div>
+            </div>
+        
+        </div>
+      </div>
+    </div></nav>
+  </div>
+  <!-- navends -->
+  <!-- carosul starts -->
+  <div class="container-fluid p-0">
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner" style="height: 800px;">
+        <div class="carousel-item active" data-bs-interval="3000">
+          <img class="d-block w-100" src="images/caurosal1.png">
+          <div class="carousel-caption d-grid ">
+            <div class="row  text-dark text-start">
+              <div class="col align-baseline ">
+                <h3 class="carousel-title  text-uppercase">New Arrivals</h3>
+                <p class="carousel-text " style="font-size: 5vw; font-weight: bolder;">Stylish <br>
+                  comforts for<br> fall nights</p>
+                <button type="button" class="btn btn-dark px-4 py-2">Shop Now</button>
+              </div>
+              <div class="col"></div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+          <img class="d-block w-100" src="images/caurosal2.png">
+          <div class="carousel-caption d-grid ">
+            <div class="row  text-dark text-start">
+              <div class="col align-baseline ">
+                <h3 class="carousel-title  text-uppercase">New Arrivals</h3>
+                <p class="carousel-text " style="font-size: 5vw; font-weight: bolder;">Stylish <br>
+                  comforts for<br> fall nights</p>
+                <button type="button" class="btn btn-dark px-4 py-2">Shop Now</button>
+              </div>
+              <div class="col"></div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+          <img class="d-block w-100" src="images/caurosal3.png">
+          <div class="carousel-caption d-grid ">
+            <div class="row  text-dark text-start">
+              <div class="col align-baseline ">
+                <h3 class="carousel-title  text-uppercase">New Arrivals</h3>
+                <p class="carousel-text " style="font-size: 5vw; font-weight: bolder;">Stylish <br>
+                  comforts for<br> fall nights</p>
+                <button type="button" class="btn btn-dark px-4 py-2">Shop Now</button>
+              </div>
+              <div class="col"></div>
+            </div>
+          </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+    <!-- carosul ends -->
+      <!-- filter product catergory -->
+  <div class="container-fluid d-grid mt-5" id="Product-menu" onload="filterSelection('all')">
+    <div class="row m-0">
+      <div class="col-12 col-xs-12 col-sm-12 col-md-3 col-lg-3 p=2 accord" style="display: flex; flex-direction: row-reverse;">
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+          <div class="accordion-item" style="width:250px ; align-self: left;">
+            <h2 class="accordion-header">
+              <button id="acbtn" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" onclick="filterSelection('all')">
+                PRODUCTS
+              </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body" id="myBtnContainer">
+                <ul class="list-group">
+                  <li class="list-group-item d-flex justify-content-between align-items-center btn active text-dark" id="btn" onclick="filterSelection('hoodie')">
+                    HOODIES
+                    <span id="badge1" class="badge bg-light text-dark rounded-pill"></span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center btn text-dark" id="btn" onclick="filterSelection('men')">
+                    MEN
+                    <span id="badge2" class="badge bg-light text-dark rounded-pill"></span>
+                  </li>
+
+                  <li class="list-group-item d-flex justify-content-between align-items-center btn text-dark" id="btn" onclick="filterSelection('jacket')">
+                    JACKETS
+                    <span id="badge3" class="badge bg-light text-dark rounded-pill"></span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center btn text-dark" id="btn" onclick="filterSelection('sweatshirt')">
+                    SWEATSHIRTS
+                    <span id="badge4" class="badge bg-light text-dark  rounded-pill"></span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center btn text-dark" id="btn" onclick="filterSelection('others')">
+                    OTHERS
+                    <span id="badge5" class="badge bg-light text-dark rounded-pill"></span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-xs-12 col-sm-12 col-md-9 col-lg-9 productview">
+        <h6 id="h6" style="text-transform: captalise; color: #666;">&nbsp;&nbsp;&nbsp;&nbsp; Showing 1-12 of 47 results</h6>
+        <div class="container filterDi listProduct">
+
+            <!-- <div class="card" style="width: 16rem;">
+             <div id="hide-i">
+                <div id="hide-icons">
+                  <span id="heart" class="bicon"><i id="bi" class="bi bi-heart"></i></span>
+                  <span id="cmyBtn" class="bicon"><i id="bi" class="bi bi-search"></i></span>
+                
+                  <span id="cart" class="bicon"><i id="bi" class="bi bi-cart2" style="width:20px;"></i></span>
+                </div>
+                <img src="images/popula-products (1).png" class="card-img-top" alt="..." style="height: 13rem;">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title text-uppercase " style="color:#bbb; ">HOODIES</h5>
+                <p class="card-text" style="color:#100;">Classic Small Logo Sweatpants, black</p>
+                <p class="price" style="color:#bbb;">$450.00</p>
+              </div>
+            </div> -->
+           
+        <div data-id="1" class="item"><div class="filterDiv hoodie ">
+  <div class="card" id="card" style="width: 18rem; border:#fff;">
+  <div id="hide-i">
+  <div id="hide-icons" class="hide-icons">
+    <span id="heart" class="bicon"><i id="bi" class="bi bi-heart"></i></span>
+    <span id="cmyBtn" class="bicon"><a href="shop.html" style="color:inherit;"><i id="bi" class="bi bi-search" data-bs-toggle="modal" data-bs-target="#modalsta" onclick="modal()" style="cursor:pointer;"></i></a></span>
+  
+    <span id="cart" class="bicon"><i id="bi" class="bi bi-cart2" style="width:20px;"></i></span>
+  </div>
+                <img src="images/popula-products (1).png" class="card-img-top" alt="..." style="height: 13rem;"></div> 
+              <div class="card-body " style="background-color:none; padding:1px 5px;">
+                <h5 class="card-title text-uppercase " id="productnam" style="color:#bbb; ">hoodie</h5>
+                <p class="card-text " style="color:#666;">Classic Small Logo Sweatpants, black</p>
+                <p class="price" id="price" style="color:#bbb;">$1000</p>
+     
+                </div>  </div>
+ </div>
+ <button class="addCart w-100" id="addcart">Add To Cart</button>
+ 
+ 
+  </div><div data-id="2" class="item"><div class="filterDiv men ">
+  <div class="card" id="card" style="width: 18rem; border:#fff;">
+  <div id="hide-i">
+  <div id="hide-icons" class="hide-icons">
+    <span id="heart" class="bicon"><i id="bi" class="bi bi-heart"></i></span>
+    <span id="cmyBtn" class="bicon"><a href="shop.html" style="color:inherit;"><i id="bi" class="bi bi-search" data-bs-toggle="modal" data-bs-target="#modalsta" onclick="modal()" style="cursor:pointer;"></i></a></span>
+  
+    <span id="cart" class="bicon"><i id="bi" class="bi bi-cart2" style="width:20px;"></i></span>
+  </div>
+                <img src="images/popula-products (2).png" class="card-img-top" alt="..." style="height: 13rem;"></div> 
+              <div class="card-body " style="background-color:none; padding:1px 5px;">
+                <h5 class="card-title text-uppercase " id="productnam" style="color:#bbb; ">men</h5>
+                <p class="card-text " style="color:#666;">Classic Small Logo Sweatpants, black</p>
+                <p class="price" id="price" style="color:#bbb;">$450</p>
+     
+                </div>  </div>
+ </div>
+ <button class="addCart w-100" id="addcart">Add To Cart</button>
+ 
+ 
+  </div><div data-id="3" class="item"><div class="filterDiv men ">
+  <div class="card" id="card" style="width: 18rem; border:#fff;">
+  <div id="hide-i">
+  <div id="hide-icons" class="hide-icons">
+    <span id="heart" class="bicon"><i id="bi" class="bi bi-heart"></i></span>
+    <span id="cmyBtn" class="bicon"><a href="shop.html" style="color:inherit;"><i id="bi" class="bi bi-search" data-bs-toggle="modal" data-bs-target="#modalsta" onclick="modal()" style="cursor:pointer;"></i></a></span>
+  
+    <span id="cart" class="bicon"><i id="bi" class="bi bi-cart2" style="width:20px;"></i></span>
+  </div>
+                <img src="images/popula-products (3).png" class="card-img-top" alt="..." style="height: 13rem;"></div> 
+              <div class="card-body " style="background-color:none; padding:1px 5px;">
+                <h5 class="card-title text-uppercase " id="productnam" style="color:#bbb; ">men</h5>
+                <p class="card-text " style="color:#666;">Classic Small Logo Sweatpants, black</p>
+                <p class="price" id="price" style="color:#bbb;">$160</p>
+     
+                </div>  </div>
+ </div>
+ <button class="addCart w-100" id="addcart">Add To Cart</button>
+ 
+ 
+  </div><div data-id="4" class="item"><div class="filterDiv sweatshirt ">
+  <div class="card" id="card" style="width: 18rem; border:#fff;">
+  <div id="hide-i">
+  <div id="hide-icons" class="hide-icons">
+    <span id="heart" class="bicon"><i id="bi" class="bi bi-heart"></i></span>
+    <span id="cmyBtn" class="bicon"><a href="shop.html" style="color:inherit;"><i id="bi" class="bi bi-search" data-bs-toggle="modal" data-bs-target="#modalsta" onclick="modal()" style="cursor:pointer;"></i></a></span>
+  
+    <span id="cart" class="bicon"><i id="bi" class="bi bi-cart2" style="width:20px;"></i></span>
+  </div>
+                <img src="images/popula-products (4).png" class="card-img-top" alt="..." style="height: 13rem;"></div> 
+              <div class="card-body " style="background-color:none; padding:1px 5px;">
+                <h5 class="card-title text-uppercase " id="productnam" style="color:#bbb; ">sweatshirt</h5>
+                <p class="card-text " style="color:#666;">Classic Small Logo Sweatpants, black</p>
+                <p class="price" id="price" style="color:#bbb;">$1000</p>
+     
+                </div>  </div>
+ </div>
+ <button class="addCart w-100" id="addcart">Add To Cart</button>
+ 
+ 
+  </div><div data-id="5" class="item"><div class="filterDiv others ">
+  <div class="card" id="card" style="width: 18rem; border:#fff;">
+  <div id="hide-i">
+  <div id="hide-icons" class="hide-icons">
+    <span id="heart" class="bicon"><i id="bi" class="bi bi-heart"></i></span>
+    <span id="cmyBtn" class="bicon"><a href="shop.html" style="color:inherit;"><i id="bi" class="bi bi-search" data-bs-toggle="modal" data-bs-target="#modalsta" onclick="modal()" style="cursor:pointer;"></i></a></span>
+  
+    <span id="cart" class="bicon"><i id="bi" class="bi bi-cart2" style="width:20px;"></i></span>
+  </div>
+                <img src="images/popula-products (5).png" class="card-img-top" alt="..." style="height: 13rem;"></div> 
+              <div class="card-body " style="background-color:none; padding:1px 5px;">
+                <h5 class="card-title text-uppercase " id="productnam" style="color:#bbb; ">others</h5>
+                <p class="card-text " style="color:#666;">Classic Small Logo Sweatpants, black</p>
+                <p class="price" id="price" style="color:#bbb;">$1000</p>
+     
+                </div>  </div>
+ </div>
+ <button class="addCart w-100" id="addcart">Add To Cart</button>
+ 
+ 
+  </div><div data-id="6" class="item"><div class="filterDiv others ">
+  <div class="card" id="card" style="width: 18rem; border:#fff;">
+  <div id="hide-i">
+  <div id="hide-icons" class="hide-icons">
+    <span id="heart" class="bicon"><i id="bi" class="bi bi-heart"></i></span>
+    <span id="cmyBtn" class="bicon"><a href="shop.html" style="color:inherit;"><i id="bi" class="bi bi-search" data-bs-toggle="modal" data-bs-target="#modalsta" onclick="modal()" style="cursor:pointer;"></i></a></span>
+  
+    <span id="cart" class="bicon"><i id="bi" class="bi bi-cart2" style="width:20px;"></i></span>
+  </div>
+                <img src="images/popula-products (6).png" class="card-img-top" alt="..." style="height: 13rem;"></div> 
+              <div class="card-body " style="background-color:none; padding:1px 5px;">
+                <h5 class="card-title text-uppercase " id="productnam" style="color:#bbb; ">others</h5>
+                <p class="card-text " style="color:#666;">Classic Small Logo Sweatpants, black</p>
+                <p class="price" id="price" style="color:#bbb;">$1000</p>
+     
+                </div>  </div>
+ </div>
+ <button class="addCart w-100" id="addcart">Add To Cart</button>
+ 
+ 
+  </div><div data-id="7" class="item"><div class="filterDiv men ">
+  <div class="card" id="card" style="width: 18rem; border:#fff;">
+  <div id="hide-i">
+  <div id="hide-icons" class="hide-icons">
+    <span id="heart" class="bicon"><i id="bi" class="bi bi-heart"></i></span>
+    <span id="cmyBtn" class="bicon"><a href="shop.html" style="color:inherit;"><i id="bi" class="bi bi-search" data-bs-toggle="modal" data-bs-target="#modalsta" onclick="modal()" style="cursor:pointer;"></i></a></span>
+  
+    <span id="cart" class="bicon"><i id="bi" class="bi bi-cart2" style="width:20px;"></i></span>
+  </div>
+                <img src="images/popula-products (7).png" class="card-img-top" alt="..." style="height: 13rem;"></div> 
+              <div class="card-body " style="background-color:none; padding:1px 5px;">
+                <h5 class="card-title text-uppercase " id="productnam" style="color:#bbb; ">men</h5>
+                <p class="card-text " style="color:#666;">Classic Small Logo Sweatpants, black</p>
+                <p class="price" id="price" style="color:#bbb;">$1000</p>
+     
+                </div>  </div>
+ </div>
+ <button class="addCart w-100" id="addcart">Add To Cart</button>
+ 
+ 
+  </div><div data-id="8" class="item"><div class="filterDiv sweatshirt ">
+  <div class="card" id="card" style="width: 18rem; border:#fff;">
+  <div id="hide-i">
+  <div id="hide-icons" class="hide-icons">
+    <span id="heart" class="bicon"><i id="bi" class="bi bi-heart"></i></span>
+    <span id="cmyBtn" class="bicon"><a href="shop.html" style="color:inherit;"><i id="bi" class="bi bi-search" data-bs-toggle="modal" data-bs-target="#modalsta" onclick="modal()" style="cursor:pointer;"></i></a></span>
+  
+    <span id="cart" class="bicon"><i id="bi" class="bi bi-cart2" style="width:20px;"></i></span>
+  </div>
+                <img src="images/popula-products (8).png" class="card-img-top" alt="..." style="height: 13rem;"></div> 
+              <div class="card-body " style="background-color:none; padding:1px 5px;">
+                <h5 class="card-title text-uppercase " id="productnam" style="color:#bbb; ">sweatshirt</h5>
+                <p class="card-text " style="color:#666;">Classic Small Logo Sweatpants, black</p>
+                <p class="price" id="price" style="color:#bbb;">$1000</p>
+     
+                </div>  </div>
+ </div>
+ <button class="addCart w-100" id="addcart">Add To Cart</button>
+ 
+ 
+  </div><div data-id="9" class="item"><div class="filterDiv jacket ">
+  <div class="card" id="card" style="width: 18rem; border:#fff;">
+  <div id="hide-i">
+  <div id="hide-icons" class="hide-icons">
+    <span id="heart" class="bicon"><i id="bi" class="bi bi-heart"></i></span>
+    <span id="cmyBtn" class="bicon"><a href="shop.html" style="color:inherit;"><i id="bi" class="bi bi-search" data-bs-toggle="modal" data-bs-target="#modalsta" onclick="modal()" style="cursor:pointer;"></i></a></span>
+  
+    <span id="cart" class="bicon"><i id="bi" class="bi bi-cart2" style="width:20px;"></i></span>
+  </div>
+                <img src="images/popula-products (9).png" class="card-img-top" alt="..." style="height: 13rem;"></div> 
+              <div class="card-body " style="background-color:none; padding:1px 5px;">
+                <h5 class="card-title text-uppercase " id="productnam" style="color:#bbb; ">jacket</h5>
+                <p class="card-text " style="color:#666;">Classic Small Logo Sweatpants, black</p>
+                <p class="price" id="price" style="color:#bbb;">$1000</p>
+     
+                </div>  </div>
+ </div>
+ <button class="addCart w-100" id="addcart">Add To Cart</button>
+ 
+ 
+  </div><div data-id="10" class="item"><div class="filterDiv hoodie ">
+  <div class="card" id="card" style="width: 18rem; border:#fff;">
+  <div id="hide-i">
+  <div id="hide-icons" class="hide-icons">
+    <span id="heart" class="bicon"><i id="bi" class="bi bi-heart"></i></span>
+    <span id="cmyBtn" class="bicon"><a href="shop.html" style="color:inherit;"><i id="bi" class="bi bi-search" data-bs-toggle="modal" data-bs-target="#modalsta" onclick="modal()" style="cursor:pointer;"></i></a></span>
+  
+    <span id="cart" class="bicon"><i id="bi" class="bi bi-cart2" style="width:20px;"></i></span>
+  </div>
+                <img src="images/popula-products (10).png" class="card-img-top" alt="..." style="height: 13rem;"></div> 
+              <div class="card-body " style="background-color:none; padding:1px 5px;">
+                <h5 class="card-title text-uppercase " id="productnam" style="color:#bbb; ">hoodie</h5>
+                <p class="card-text " style="color:#666;">Classic Small Logo Sweatpants, black</p>
+                <p class="price" id="price" style="color:#bbb;">$1000</p>
+     
+                </div>  </div>
+ </div>
+ <button class="addCart w-100" id="addcart">Add To Cart</button>
+ 
+ 
+  </div><div data-id="11" class="item"><div class="filterDiv hoodie ">
+  <div class="card" id="card" style="width: 18rem; border:#fff;">
+  <div id="hide-i">
+  <div id="hide-icons" class="hide-icons">
+    <span id="heart" class="bicon"><i id="bi" class="bi bi-heart"></i></span>
+    <span id="cmyBtn" class="bicon"><a href="shop.html" style="color:inherit;"><i id="bi" class="bi bi-search" data-bs-toggle="modal" data-bs-target="#modalsta" onclick="modal()" style="cursor:pointer;"></i></a></span>
+  
+    <span id="cart" class="bicon"><i id="bi" class="bi bi-cart2" style="width:20px;"></i></span>
+  </div>
+                <img src="images/popula-products (11).png" class="card-img-top" alt="..." style="height: 13rem;"></div> 
+              <div class="card-body " style="background-color:none; padding:1px 5px;">
+                <h5 class="card-title text-uppercase " id="productnam" style="color:#bbb; ">hoodie</h5>
+                <p class="card-text " style="color:#666;">Classic Small Logo Sweatpants, black</p>
+                <p class="price" id="price" style="color:#bbb;">$1000</p>
+     
+                </div>  </div>
+ </div>
+ <button class="addCart w-100" id="addcart">Add To Cart</button>
+ 
+ 
+  </div><div data-id="12" class="item"><div class="filterDiv sweatshirt ">
+  <div class="card" id="card" style="width: 18rem; border:#fff;">
+  <div id="hide-i">
+  <div id="hide-icons" class="hide-icons">
+    <span id="heart" class="bicon"><i id="bi" class="bi bi-heart"></i></span>
+    <span id="cmyBtn" class="bicon"><a href="shop.html" style="color:inherit;"><i id="bi" class="bi bi-search" data-bs-toggle="modal" data-bs-target="#modalsta" onclick="modal()" style="cursor:pointer;"></i></a></span>
+  
+    <span id="cart" class="bicon"><i id="bi" class="bi bi-cart2" style="width:20px;"></i></span>
+  </div>
+                <img src="images/popula-products (12).png" class="card-img-top" alt="..." style="height: 13rem;"></div> 
+              <div class="card-body " style="background-color:none; padding:1px 5px;">
+                <h5 class="card-title text-uppercase " id="productnam" style="color:#bbb; ">sweatshirt</h5>
+                <p class="card-text " style="color:#666;">Classic Small Logo Sweatpants, black</p>
+                <p class="price" id="price" style="color:#bbb;">$450</p>
+     
+                </div>  </div>
+ </div>
+ <button class="addCart w-100" id="addcart">Add To Cart</button>
+ 
+ 
+  </div><div data-id="13" class="item"><div class="filterDiv sweatshirt ">
+  <div class="card" id="card" style="width: 18rem; border:#fff;">
+  <div id="hide-i">
+  <div id="hide-icons" class="hide-icons">
+    <span id="heart" class="bicon"><i id="bi" class="bi bi-heart"></i></span>
+    <span id="cmyBtn" class="bicon"><a href="shop.html" style="color:inherit;"><i id="bi" class="bi bi-search" data-bs-toggle="modal" data-bs-target="#modalsta" onclick="modal()" style="cursor:pointer;"></i></a></span>
+  
+    <span id="cart" class="bicon"><i id="bi" class="bi bi-cart2" style="width:20px;"></i></span>
+  </div>
+                <img src="images/popula-products (13).png" class="card-img-top" alt="..." style="height: 13rem;"></div> 
+              <div class="card-body " style="background-color:none; padding:1px 5px;">
+                <h5 class="card-title text-uppercase " id="productnam" style="color:#bbb; ">sweatshirt</h5>
+                <p class="card-text " style="color:#666;">Classic Small Logo Sweatpants, black</p>
+                <p class="price" id="price" style="color:#bbb;">$160</p>
+     
+                </div>  </div>
+ </div>
+ <button class="addCart w-100" id="addcart">Add To Cart</button>
+ 
+ 
+  </div><div data-id="14" class="item"><div class="filterDiv men ">
+  <div class="card" id="card" style="width: 18rem; border:#fff;">
+  <div id="hide-i">
+  <div id="hide-icons" class="hide-icons">
+    <span id="heart" class="bicon"><i id="bi" class="bi bi-heart"></i></span>
+    <span id="cmyBtn" class="bicon"><a href="shop.html" style="color:inherit;"><i id="bi" class="bi bi-search" data-bs-toggle="modal" data-bs-target="#modalsta" onclick="modal()" style="cursor:pointer;"></i></a></span>
+  
+    <span id="cart" class="bicon"><i id="bi" class="bi bi-cart2" style="width:20px;"></i></span>
+  </div>
+                <img src="images/popula-products (14).png" class="card-img-top" alt="..." style="height: 13rem;"></div> 
+              <div class="card-body " style="background-color:none; padding:1px 5px;">
+                <h5 class="card-title text-uppercase " id="productnam" style="color:#bbb; ">men</h5>
+                <p class="card-text " style="color:#666;">Classic Small Logo Sweatpants, black</p>
+                <p class="price" id="price" style="color:#bbb;">$1000</p>
+     
+                </div>  </div>
+ </div>
+ <button class="addCart w-100" id="addcart">Add To Cart</button>
+ 
+ 
+  </div><div data-id="15" class="item"><div class="filterDiv men ">
+  <div class="card" id="card" style="width: 18rem; border:#fff;">
+  <div id="hide-i">
+  <div id="hide-icons" class="hide-icons">
+    <span id="heart" class="bicon"><i id="bi" class="bi bi-heart"></i></span>
+    <span id="cmyBtn" class="bicon"><a href="shop.html" style="color:inherit;"><i id="bi" class="bi bi-search" data-bs-toggle="modal" data-bs-target="#modalsta" onclick="modal()" style="cursor:pointer;"></i></a></span>
+  
+    <span id="cart" class="bicon"><i id="bi" class="bi bi-cart2" style="width:20px;"></i></span>
+  </div>
+                <img src="images/popula-products (15).png" class="card-img-top" alt="..." style="height: 13rem;"></div> 
+              <div class="card-body " style="background-color:none; padding:1px 5px;">
+                <h5 class="card-title text-uppercase " id="productnam" style="color:#bbb; ">men</h5>
+                <p class="card-text " style="color:#666;">Classic Small Logo Sweatpants, black</p>
+                <p class="price" id="price" style="color:#bbb;">$1000</p>
+     
+                </div>  </div>
+ </div>
+ <button class="addCart w-100" id="addcart">Add To Cart</button>
+ 
+ 
+  </div><div data-id="16" class="item"><div class="filterDiv others ">
+  <div class="card" id="card" style="width: 18rem; border:#fff;">
+  <div id="hide-i">
+  <div id="hide-icons" class="hide-icons">
+    <span id="heart" class="bicon"><i id="bi" class="bi bi-heart"></i></span>
+    <span id="cmyBtn" class="bicon"><a href="shop.html" style="color:inherit;"><i id="bi" class="bi bi-search" data-bs-toggle="modal" data-bs-target="#modalsta" onclick="modal()" style="cursor:pointer;"></i></a></span>
+  
+    <span id="cart" class="bicon"><i id="bi" class="bi bi-cart2" style="width:20px;"></i></span>
+  </div>
+                <img src="images/popula-products (16).png" class="card-img-top" alt="..." style="height: 13rem;"></div> 
+              <div class="card-body " style="background-color:none; padding:1px 5px;">
+                <h5 class="card-title text-uppercase " id="productnam" style="color:#bbb; ">others</h5>
+                <p class="card-text " style="color:#666;">Classic Small Logo Sweatpants, black</p>
+                <p class="price" id="price" style="color:#bbb;">$1000</p>
+     
+                </div>  </div>
+ </div>
+ <button class="addCart w-100" id="addcart">Add To Cart</button>
+ 
+ 
+  </div><div data-id="17" class="item"><div class="filterDiv others ">
+  <div class="card" id="card" style="width: 18rem; border:#fff;">
+  <div id="hide-i">
+  <div id="hide-icons" class="hide-icons">
+    <span id="heart" class="bicon"><i id="bi" class="bi bi-heart"></i></span>
+    <span id="cmyBtn" class="bicon"><a href="shop.html" style="color:inherit;"><i id="bi" class="bi bi-search" data-bs-toggle="modal" data-bs-target="#modalsta" onclick="modal()" style="cursor:pointer;"></i></a></span>
+  
+    <span id="cart" class="bicon"><i id="bi" class="bi bi-cart2" style="width:20px;"></i></span>
+  </div>
+                <img src="images/popula-products (17).png" class="card-img-top" alt="..." style="height: 13rem;"></div> 
+              <div class="card-body " style="background-color:none; padding:1px 5px;">
+                <h5 class="card-title text-uppercase " id="productnam" style="color:#bbb; ">others</h5>
+                <p class="card-text " style="color:#666;">Classic Small Logo Sweatpants, black</p>
+                <p class="price" id="price" style="color:#bbb;">$1000</p>
+     
+                </div>  </div>
+ </div>
+ <button class="addCart w-100" id="addcart">Add To Cart</button>
+ 
+ 
+  </div><div data-id="18" class="item"><div class="filterDiv men ">
+  <div class="card" id="card" style="width: 18rem; border:#fff;">
+  <div id="hide-i">
+  <div id="hide-icons" class="hide-icons">
+    <span id="heart" class="bicon"><i id="bi" class="bi bi-heart"></i></span>
+    <span id="cmyBtn" class="bicon"><a href="shop.html" style="color:inherit;"><i id="bi" class="bi bi-search" data-bs-toggle="modal" data-bs-target="#modalsta" onclick="modal()" style="cursor:pointer;"></i></a></span>
+  
+    <span id="cart" class="bicon"><i id="bi" class="bi bi-cart2" style="width:20px;"></i></span>
+  </div>
+                <img src="images/popula-products (18).png" class="card-img-top" alt="..." style="height: 13rem;"></div> 
+              <div class="card-body " style="background-color:none; padding:1px 5px;">
+                <h5 class="card-title text-uppercase " id="productnam" style="color:#bbb; ">men</h5>
+                <p class="card-text " style="color:#666;">Classic Small Logo Sweatpants, black</p>
+                <p class="price" id="price" style="color:#bbb;">$1000</p>
+     
+                </div>  </div>
+ </div>
+ <button class="addCart w-100" id="addcart">Add To Cart</button>
+ 
+ 
+  </div><div data-id="19" class="item"><div class="filterDiv hoodie ">
+  <div class="card" id="card" style="width: 18rem; border:#fff;">
+  <div id="hide-i">
+  <div id="hide-icons" class="hide-icons">
+    <span id="heart" class="bicon"><i id="bi" class="bi bi-heart"></i></span>
+    <span id="cmyBtn" class="bicon"><a href="shop.html" style="color:inherit;"><i id="bi" class="bi bi-search" data-bs-toggle="modal" data-bs-target="#modalsta" onclick="modal()" style="cursor:pointer;"></i></a></span>
+  
+    <span id="cart" class="bicon"><i id="bi" class="bi bi-cart2" style="width:20px;"></i></span>
+  </div>
+                <img src="images/popula-products (19).png" class="card-img-top" alt="..." style="height: 13rem;"></div> 
+              <div class="card-body " style="background-color:none; padding:1px 5px;">
+                <h5 class="card-title text-uppercase " id="productnam" style="color:#bbb; ">hoodie</h5>
+                <p class="card-text " style="color:#666;">Classic Small Logo Sweatpants, black</p>
+                <p class="price" id="price" style="color:#bbb;">$1000</p>
+     
+                </div>  </div>
+ </div>
+ <button class="addCart w-100" id="addcart">Add To Cart</button>
+ 
+ 
+  </div><div data-id="20" class="item"><div class="filterDiv jacket ">
+  <div class="card" id="card" style="width: 18rem; border:#fff;">
+  <div id="hide-i">
+  <div id="hide-icons" class="hide-icons">
+    <span id="heart" class="bicon"><i id="bi" class="bi bi-heart"></i></span>
+    <span id="cmyBtn" class="bicon"><a href="shop.html" style="color:inherit;"><i id="bi" class="bi bi-search" data-bs-toggle="modal" data-bs-target="#modalsta" onclick="modal()" style="cursor:pointer;"></i></a></span>
+  
+    <span id="cart" class="bicon"><i id="bi" class="bi bi-cart2" style="width:20px;"></i></span>
+  </div>
+                <img src="images/popula-products (20).png" class="card-img-top" alt="..." style="height: 13rem;"></div> 
+              <div class="card-body " style="background-color:none; padding:1px 5px;">
+                <h5 class="card-title text-uppercase " id="productnam" style="color:#bbb; ">jacket</h5>
+                <p class="card-text " style="color:#666;">Classic Small Logo Sweatpants, black</p>
+                <p class="price" id="price" style="color:#bbb;">$1000</p>
+     
+                </div>  </div>
+ </div>
+ <button class="addCart w-100" id="addcart">Add To Cart</button>
+ 
+ 
+  </div><div data-id="21" class="item"><div class="filterDiv sweatshirt ">
+  <div class="card" id="card" style="width: 18rem; border:#fff;">
+  <div id="hide-i">
+  <div id="hide-icons" class="hide-icons">
+    <span id="heart" class="bicon"><i id="bi" class="bi bi-heart"></i></span>
+    <span id="cmyBtn" class="bicon"><a href="shop.html" style="color:inherit;"><i id="bi" class="bi bi-search" data-bs-toggle="modal" data-bs-target="#modalsta" onclick="modal()" style="cursor:pointer;"></i></a></span>
+  
+    <span id="cart" class="bicon"><i id="bi" class="bi bi-cart2" style="width:20px;"></i></span>
+  </div>
+                <img src="images/popula-products (21).png" class="card-img-top" alt="..." style="height: 13rem;"></div> 
+              <div class="card-body " style="background-color:none; padding:1px 5px;">
+                <h5 class="card-title text-uppercase " id="productnam" style="color:#bbb; ">sweatshirt</h5>
+                <p class="card-text " style="color:#666;">Classic Small Logo Sweatpants, black</p>
+                <p class="price" id="price" style="color:#bbb;">$1000</p>
+     
+                </div>  </div>
+ </div>
+ <button class="addCart w-100" id="addcart">Add To Cart</button>
+
+ </div><div data-id="22" class="item"><div class="filterDiv jacket ">
+  <div class="card" id="card" style="width: 18rem; border:#fff;">
+  <div id="hide-i">
+  <div id="hide-icons" class="hide-icons">
+    <span id="heart" class="bicon"><i id="bi" class="bi bi-heart"></i></span>
+    <span id="cmyBtn" class="bicon"><a href="shop.html" style="color:inherit;"><i id="bi" class="bi bi-search" data-bs-toggle="modal" data-bs-target="#modalsta" onclick="modal()" style="cursor:pointer;"></i></a></span>
+  
+    <span id="cart" class="bicon"><i id="bi" class="bi bi-cart2" style="width:20px;"></i></span>
+  </div>
+                <img src="images/popula-products (22).png" class="card-img-top" alt="..." style="height: 13rem;"></div> 
+              <div class="card-body " style="background-color:none; padding:1px 5px;">
+                <h5 class="card-title text-uppercase " id="productnam" style="color:#bbb; ">jacket</h5>
+                <p class="card-text " style="color:#666;">Classic Small Logo Sweatpants, black</p>
+                <p class="price" id="price" style="color:#bbb;">$450</p>
+     
+                </div>  </div>
+ </div>
+ <button class="addCart w-100" id="addcart">Add To Cart</button>
+ 
+ 
+  </div><div data-id="23" class="item"><div class="filterDiv jacket ">
+  <div class="card" id="card" style="width: 18rem; border:#fff;">
+  <div id="hide-i">
+  <div id="hide-icons" class="hide-icons">
+    <span id="heart" class="bicon"><i id="bi" class="bi bi-heart"></i></span>
+    <span id="cmyBtn" class="bicon"><a href="shop.html" style="color:inherit;"><i id="bi" class="bi bi-search" data-bs-toggle="modal" data-bs-target="#modalsta" onclick="modal()" style="cursor:pointer;"></i></a></span>
+  
+    <span id="cart" class="bicon"><i id="bi" class="bi bi-cart2" style="width:20px;"></i></span>
+  </div>
+                <img src="images/popula-products (23).png" class="card-img-top" alt="..." style="height: 13rem;"></div> 
+              <div class="card-body " style="background-color:none; padding:1px 5px;">
+                <h5 class="card-title text-uppercase " id="productnam" style="color:#bbb; ">jacket</h5>
+                <p class="card-text " style="color:#666;">Classic Small Logo Sweatpants, black</p>
+                <p class="price" id="price" style="color:#bbb;">$160</p>
+     
+                </div>  </div>
+ </div>
+ <button class="addCart w-100" id="addcart">Add To Cart</button>
+ 
+ 
+  </div><div data-id="24" class="item"><div class="filterDiv hoodie ">
+  <div class="card" id="card" style="width: 18rem; border:#fff;">
+  <div id="hide-i">
+  <div id="hide-icons" class="hide-icons">
+    <span id="heart" class="bicon"><i id="bi" class="bi bi-heart"></i></span>
+    <span id="cmyBtn" class="bicon"><a href="shop.html" style="color:inherit;"><i id="bi" class="bi bi-search" data-bs-toggle="modal" data-bs-target="#modalsta" onclick="modal()" style="cursor:pointer;"></i></a></span>
+  
+    <span id="cart" class="bicon"><i id="bi" class="bi bi-cart2" style="width:20px;"></i></span>
+  </div>
+                <img src="images/popula-products (24).png" class="card-img-top" alt="..." style="height: 13rem;"></div> 
+              <div class="card-body " style="background-color:none; padding:1px 5px;">
+                <h5 class="card-title text-uppercase " id="productnam" style="color:#bbb; ">hoodie</h5>
+                <p class="card-text " style="color:#666;">Classic Small Logo Sweatpants, black</p>
+                <p class="price" id="price" style="color:#bbb;">$1000</p>
+     
+                </div>  </div>
+ </div>
+ <button class="addCart w-100" id="addcart">Add To Cart</button>
+ 
+ 
+  </div><div data-id="25" class="item"><div class="filterDiv jacket ">
+  <div class="card" id="card" style="width: 18rem; border:#fff;">
+  <div id="hide-i">
+  <div id="hide-icons" class="hide-icons">
+    <span id="heart" class="bicon"><i id="bi" class="bi bi-heart"></i></span>
+    <span id="cmyBtn" class="bicon"><a href="shop.html" style="color:inherit;"><i id="bi" class="bi bi-search" data-bs-toggle="modal" data-bs-target="#modalsta" onclick="modal()" style="cursor:pointer;"></i></a></span>
+  
+    <span id="cart" class="bicon"><i id="bi" class="bi bi-cart2" style="width:20px;"></i></span>
+  </div>
+                <img src="images/popula-products (25).png" class="card-img-top" alt="..." style="height: 13rem;"></div> 
+              <div class="card-body " style="background-color:none; padding:1px 5px;">
+                <h5 class="card-title text-uppercase " id="productnam" style="color:#bbb; ">jacket</h5>
+                <p class="card-text " style="color:#666;">Classic Small Logo Sweatpants, black</p>
+                <p class="price" id="price" style="color:#bbb;">$1000</p>
+     
+                </div>  </div>
+ </div>
+ <button class="addCart w-100" id="addcart">Add To Cart</button>
+ 
+ 
+  </div><div data-id="26" class="item"><div class="filterDiv jacket ">
+  <div class="card" id="card" style="width: 18rem; border:#fff;">
+  <div id="hide-i">
+  <div id="hide-icons" class="hide-icons">
+    <span id="heart" class="bicon"><i id="bi" class="bi bi-heart"></i></span>
+    <span id="cmyBtn" class="bicon"><a href="shop.html" style="color:inherit;"><i id="bi" class="bi bi-search" data-bs-toggle="modal" data-bs-target="#modalsta" onclick="modal()" style="cursor:pointer;"></i></a></span>
+  
+    <span id="cart" class="bicon"><i id="bi" class="bi bi-cart2" style="width:20px;"></i></span>
+  </div>
+                <img src="images/popula-products (26).png" class="card-img-top" alt="..." style="height: 13rem;"></div> 
+              <div class="card-body " style="background-color:none; padding:1px 5px;">
+                <h5 class="card-title text-uppercase " id="productnam" style="color:#bbb; ">jacket</h5>
+                <p class="card-text " style="color:#666;">Classic Small Logo Sweatpants, black</p>
+                <p class="price" id="price" style="color:#bbb;">$1000</p>
+     
+                </div>  </div>
+ </div>
+ <button class="addCart w-100" id="addcart">Add To Cart</button>
+ 
+ 
+  </div><div data-id="27" class="item"><div class="filterDiv others ">
+  <div class="card" id="card" style="width: 18rem; border:#fff;">
+  <div id="hide-i">
+  <div id="hide-icons" class="hide-icons">
+    <span id="heart" class="bicon"><i id="bi" class="bi bi-heart"></i></span>
+    <span id="cmyBtn" class="bicon"><a href="shop.html" style="color:inherit;"><i id="bi" class="bi bi-search" data-bs-toggle="modal" data-bs-target="#modalsta" onclick="modal()" style="cursor:pointer;"></i></a></span>
+  
+    <span id="cart" class="bicon"><i id="bi" class="bi bi-cart2" style="width:20px;"></i></span>
+  </div>
+                <img src="images/popula-products (27).png" class="card-img-top" alt="..." style="height: 13rem;"></div> 
+              <div class="card-body " style="background-color:none; padding:1px 5px;">
+                <h5 class="card-title text-uppercase " id="productnam" style="color:#bbb; ">others</h5>
+                <p class="card-text " style="color:#666;">Classic Small Logo Sweatpants, black</p>
+                <p class="price" id="price" style="color:#bbb;">$1000</p>
+     
+                </div>  </div>
+ </div>
+ <button class="addCart w-100" id="addcart">Add To Cart</button>
+ 
+ 
+  </div><div data-id="28" class="item"><div class="filterDiv sweatshirt ">
+  <div class="card" id="card" style="width: 18rem; border:#fff;">
+  <div id="hide-i">
+  <div id="hide-icons" class="hide-icons">
+    <span id="heart" class="bicon"><i id="bi" class="bi bi-heart"></i></span>
+    <span id="cmyBtn" class="bicon"><a href="shop.html" style="color:inherit;"><i id="bi" class="bi bi-search" data-bs-toggle="modal" data-bs-target="#modalsta" onclick="modal()" style="cursor:pointer;"></i></a></span>
+  
+    <span id="cart" class="bicon"><i id="bi" class="bi bi-cart2" style="width:20px;"></i></span>
+  </div>
+                <img src="images/popula-products (28).png" class="card-img-top" alt="..." style="height: 13rem;"></div> 
+              <div class="card-body " style="background-color:none; padding:1px 5px;">
+                <h5 class="card-title text-uppercase " id="productnam" style="color:#bbb; ">sweatshirt</h5>
+                <p class="card-text " style="color:#666;">Classic Small Logo Sweatpants, black</p>
+                <p class="price" id="price" style="color:#bbb;">$1000</p>
+     
+                </div>  </div>
+ </div>
+ <button class="addCart w-100" id="addcart">Add To Cart</button>
+ 
+ 
+  </div><div data-id="29" class="item"><div class="filterDiv men ">
+  <div class="card" id="card" style="width: 18rem; border:#fff;">
+  <div id="hide-i">
+  <div id="hide-icons" class="hide-icons">
+    <span id="heart" class="bicon"><i id="bi" class="bi bi-heart"></i></span>
+    <span id="cmyBtn" class="bicon"><a href="shop.html" style="color:inherit;"><i id="bi" class="bi bi-search" data-bs-toggle="modal" data-bs-target="#modalsta" onclick="modal()" style="cursor:pointer;"></i></a></span>
+  
+    <span id="cart" class="bicon"><i id="bi" class="bi bi-cart2" style="width:20px;"></i></span>
+  </div>
+                <img src="images/popula-products (29).png" class="card-img-top" alt="..." style="height: 13rem;"></div> 
+              <div class="card-body " style="background-color:none; padding:1px 5px;">
+                <h5 class="card-title text-uppercase " id="productnam" style="color:#bbb; ">men</h5>
+                <p class="card-text " style="color:#666;">Classic Small Logo Sweatpants, black</p>
+                <p class="price" id="price" style="color:#bbb;">$1000</p>
+     
+                </div>  </div>
+ </div>
+ <button class="addCart w-100" id="addcart">Add To Cart</button>
+ 
+ 
+  </div><div data-id="30" class="item"><div class="filterDiv men ">
+  <div class="card" id="card" style="width: 18rem; border:#fff;">
+  <div id="hide-i">
+  <div id="hide-icons" class="hide-icons">
+    <span id="heart" class="bicon"><i id="bi" class="bi bi-heart"></i></span>
+    <span id="cmyBtn" class="bicon"><a href="shop.html" style="color:inherit;"><i id="bi" class="bi bi-search" data-bs-toggle="modal" data-bs-target="#modalsta" onclick="modal()" style="cursor:pointer;"></i></a></span>
+  
+    <span id="cart" class="bicon"><i id="bi" class="bi bi-cart2" style="width:20px;"></i></span>
+  </div>
+                <img src="images/popula-products (30).png" class="card-img-top" alt="..." style="height: 13rem;"></div> 
+              <div class="card-body " style="background-color:none; padding:1px 5px;">
+                <h5 class="card-title text-uppercase " id="productnam" style="color:#bbb; ">men</h5>
+                <p class="card-text " style="color:#666;">Classic Small Logo Sweatpants, black</p>
+                <p class="price" id="price" style="color:#bbb;">$1000</p>
+     
+                </div>  </div>
+ </div>
+ <button class="addCart w-100" id="addcart">Add To Cart</button>
+ 
+ 
+  </div><div data-id="31" class="item"><div class="filterDiv jacket ">
+  <div class="card" id="card" style="width: 18rem; border:#fff;">
+  <div id="hide-i">
+  <div id="hide-icons" class="hide-icons">
+    <span id="heart" class="bicon"><i id="bi" class="bi bi-heart"></i></span>
+    <span id="cmyBtn" class="bicon"><a href="shop.html" style="color:inherit;"><i id="bi" class="bi bi-search" data-bs-toggle="modal" data-bs-target="#modalsta" onclick="modal()" style="cursor:pointer;"></i></a></span>
+  
+    <span id="cart" class="bicon"><i id="bi" class="bi bi-cart2" style="width:20px;"></i></span>
+  </div>
+                <img src="images/popula-products (31).png" class="card-img-top" alt="..." style="height: 13rem;"></div> 
+              <div class="card-body " style="background-color:none; padding:1px 5px;">
+                <h5 class="card-title text-uppercase " id="productnam" style="color:#bbb; ">jacket</h5>
+                <p class="card-text " style="color:#666;">Classic Small Logo Sweatpants, black</p>
+                <p class="price" id="price" style="color:#bbb;">$1000</p>
+     
+                </div>  </div>
+ </div>
+ <button class="addCart w-100" id="addcart">Add To Cart</button>
+ 
+ 
+  </div><div data-id="32" class="item"><div class="filterDiv men ">
+  <div class="card" id="card" style="width: 18rem; border:#fff;">
+  <div id="hide-i">
+  <div id="hide-icons" class="hide-icons">
+    <span id="heart" class="bicon"><i id="bi" class="bi bi-heart"></i></span>
+    <span id="cmyBtn" class="bicon"><a href="shop.html" style="color:inherit;"><i id="bi" class="bi bi-search" data-bs-toggle="modal" data-bs-target="#modalsta" onclick="modal()" style="cursor:pointer;"></i></a></span>
+  
+    <span id="cart" class="bicon"><i id="bi" class="bi bi-cart2" style="width:20px;"></i></span>
+  </div>
+                <img src="images/popula-products (32).png" class="card-img-top" alt="..." style="height: 13rem;"></div> 
+              <div class="card-body " style="background-color:none; padding:1px 5px;">
+                <h5 class="card-title text-uppercase " id="productnam" style="color:#bbb; ">men</h5>
+                <p class="card-text " style="color:#666;">Classic Small Logo Sweatpants, black</p>
+                <p class="price" id="price" style="color:#bbb;">$1000</p>
+     
+                </div>  </div>
+ </div>
+ <button class="addCart w-100" id="addcart">Add To Cart</button>
+ 
+ 
+  </div><div data-id="33" class="item"><div class="filterDiv sweatshirt ">
+  <div class="card" id="card" style="width: 18rem; border:#fff;">
+  <div id="hide-i">
+  <div id="hide-icons" class="hide-icons">
+    <span id="heart" class="bicon"><i id="bi" class="bi bi-heart"></i></span>
+    <span id="cmyBtn" class="bicon"><a href="shop.html" style="color:inherit;"><i id="bi" class="bi bi-search" data-bs-toggle="modal" data-bs-target="#modalsta" onclick="modal()" style="cursor:pointer;"></i></a></span>
+  
+    <span id="cart" class="bicon"><i id="bi" class="bi bi-cart2" style="width:20px;"></i></span>
+  </div>
+                <img src="images/popula-products (4).png" class="card-img-top" alt="..." style="height: 13rem;"></div> 
+              <div class="card-body " style="background-color:none; padding:1px 5px;">
+                <h5 class="card-title text-uppercase " id="productnam" style="color:#bbb; ">sweatshirt</h5>
+                <p class="card-text " style="color:#666;">Classic Small Logo Sweatpants, black</p>
+                <p class="price" id="price" style="color:#bbb;">$1000</p>
+     
+                </div>  </div>
+ </div>
+ <button class="addCart w-100" id="addcart">Add To Cart</button>
+ 
+ 
+  </div></div>
+      </div>
+    </div>
+   
+     <!-- <div class="modal fade" id="modalsta" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="#modalstat" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content" style="  max-width: 80rem;">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body listmodal"  >
+       
+           <div class="modal fade" id="modalstat" data-bs-backdrop="static"
+            data-bs-keyboard="false" tabindex="-1" aria-labelledby="#modalstat" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content" style="  max-width: 80rem;">
+                    <div class="modal-header">
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                              <div class="row">
+          
+                      <div class="col col-6">
+                        <img class="image-top" style="width:400px;"
+                          src="${product.image}" alt="">
+                      </div>
+                      <div class="col col-6">
+                        <h4>{product.Producttext}</h4><br>
+                        <h6>$${product.Price}</h6><br>
+                        <p>A product short description is a concise and brief overview of a product, providing key
+                          information to potential customers. Typically, it is a brief summary that highlights the
+                          most important features, benefits, and characteristics of the product
+                        <h5>Color : Black</h5> <br>
+                        <ul class="list-group list-inline-item " style="width:200px; display: flex; flex-direction: row; padding-left: 0; margin-bottom: 10px; border-radius: 0.25rem;
+                              justify-content: space-between;">
+                          <li class="list-group-item border-0"
+                            style="padding:9px; border-radius: 0; background-color:rgb(231, 12, 12)" ;></li>
+                          <li class="list-group-item border-0" style="padding:9px; background-color:rgb(243, 144, 16)"
+                            ;></li>
+                          <li class="list-group-item border-0" style="padding:9px; background-color:rgb(240, 224, 10)"
+                            ;></li>
+                          <li class="list-group-item border-0" style="padding:9px; background-color:rgb(98, 248, 28)"
+                            ;></li>
+                          <li class="list-group-item border-0" style="padding:9px; background-color:rgb(39, 102, 238)"
+                            ;></li>
+                          <li class="list-group-item border-0"
+                            style="padding:9px;  border-radius: 0;background-color:rgb(238, 16, 201)" ;></li>
+                        </ul> <br>
+                        <div class=" py-1 d-flex justify-content-start" role="button">
+                          <div style="width:120px; " class="d-flex justify-content-between border  mx-3"><span
+                              class="fs-5 px-3">-</span>
+                            <span class="fs-5 px-3">1</span>
+                            <span class="fs-5 px-3">+</span>
+                          </div>
+          
+                          <button class="btn btn-dark"> <a href="shop.html" style="text-decoration:none; color:#fff;">Add To Cart</a></button>
+                        </div>
+          
+                        <br><br>
+                        <h6><i id="bi" class="bi bi-heart"></i> Add to wishList</h6>
+                      </div>
+                    </div>
+                    </div>
+                 
+                  </div>
+                </div>
+              </div>
+
+
+          </div>
+       
+        </div>
+      </div>
+    </div>  -->
+
+
+  </div>
+  <!-- filterends -->
+      <!-- Swipper --><br>
+  <div class=" container swiper">
+    <div class="title my-3 mt-5 text-center"><p class="text-secondary">LATEST PRODUCTS</p><h1 class="display-5"><b>New Arrivals</b></h1></div>
+    <br><div class="slider-wrapper swiper-initialized swiper-horizontal swiper-backface-hidden">
+      <div class="card-list swiper-wrapper" id="swiper-wrapper-949191307648df2a" aria-live="polite" style="cursor: grab;">
+        <div class="card-item swiper-slide swiper-slide-active" role="group" aria-label="1 / 9" data-swiper-slide-index="0" style="width: 305.333px; margin-right: 30px;">
+          <div class="card p-0 border-none">
+               <img src="images/popula-products (1).png" class="card-img-top" alt="..." style="height: 17rem;">
+             <div class="card-body">
+               <h5 class="card-title text-uppercase " style="color:#bbb; ">HOODIES</h5>
+               <p class="card-text" style="color:#100;">Classic Small Logo Sweatpants, black</p>
+               <p class="price" style="color:#bbb;">$450.00</p>
+             </div>
+           </div> 
+
+        </div>
+        
+        <div class="card-item swiper-slide swiper-slide-next" role="group" aria-label="2 / 9" data-swiper-slide-index="1" style="width: 305.333px; margin-right: 30px;">
+          <div class="card p-0 border-none">
+               <img src="images/popula-products (21).png" class="card-img-top" alt="..." style="height: 17rem;">
+             <div class="card-body">
+               <h5 class="card-title text-uppercase " style="color:#bbb; ">HOODIES</h5>
+               <p class="card-text" style="color:#100;">Classic Small Logo Sweatpants, black</p>
+               <p class="price" style="color:#bbb;">$450.00</p>
+             </div>
+           </div> 
+
+        </div>
+        <div class="card-item swiper-slide" role="group" aria-label="3 / 9" data-swiper-slide-index="2" style="width: 305.333px; margin-right: 30px;">
+          <div class="card p-0 border-none">
+               <img src="images/popula-products (14).png" class="card-img-top" alt="..." style="height: 17rem;">
+             <div class="card-body">
+               <h5 class="card-title text-uppercase " style="color:#bbb; ">HOODIES</h5>
+               <p class="card-text" style="color:#100;">Classic Small Logo Sweatpants, black</p>
+               <p class="price" style="color:#bbb;">$450.00</p>
+             </div>
+           </div> 
+
+        </div>
+        <div class="card-item swiper-slide" role="group" aria-label="4 / 9" data-swiper-slide-index="3" style="width: 305.333px; margin-right: 30px;">
+          <div class="card p-0 border-none">
+               <img src="images/popula-products (15).png" class="card-img-top" alt="..." style="height: 17rem;">
+             <div class="card-body">
+               <h5 class="card-title text-uppercase " style="color:#bbb; ">HOODIES</h5>
+               <p class="card-text" style="color:#100;">Classic Small Logo Sweatpants, black</p>
+               <p class="price" style="color:#bbb;">$450.00</p>
+             </div>
+           </div> 
+
+        </div>
+        <div class="card-item swiper-slide" role="group" aria-label="5 / 9" data-swiper-slide-index="4" style="width: 305.333px; margin-right: 30px;">
+          <div class="card p-0 border-none">
+               <img src="images/popula-products (16).png" class="card-img-top" alt="..." style="height: 17rem;">
+             <div class="card-body">
+               <h5 class="card-title text-uppercase " style="color:#bbb; ">HOODIES</h5>
+               <p class="card-text" style="color:#100;">Classic Small Logo Sweatpants, black</p>
+               <p class="price" style="color:#bbb;">$450.00</p>
+             </div>
+           </div> 
+
+        </div>
+        <div class="card-item swiper-slide" role="group" aria-label="6 / 9" data-swiper-slide-index="5" style="width: 305.333px; margin-right: 30px;">
+          <div class="card p-0 border-none">
+               <img src="images/popula-products (17).png" class="card-img-top" alt="..." style="height: 17rem;">
+             <div class="card-body">
+               <h5 class="card-title text-uppercase " style="color:#bbb; ">HOODIES</h5>
+               <p class="card-text" style="color:#100;">Classic Small Logo Sweatpants, black</p>
+               <p class="price" style="color:#bbb;">$450.00</p>
+             </div>
+           </div> 
+
+        </div>
+        <div class="card-item swiper-slide" role="group" aria-label="7 / 9" data-swiper-slide-index="6" style="width: 305.333px; margin-right: 30px;">
+          <div class="card p-0 border-none">
+               <img src="images/popula-products (28).png" class="card-img-top" alt="..." style="height: 17rem;">
+             <div class="card-body">
+               <h5 class="card-title text-uppercase " style="color:#bbb; ">Jacket</h5>
+               <p class="card-text" style="color:#100;">Classic Small Logo Sweatpants, black</p>
+               <p class="price" style="color:#bbb;">$450.00</p>
+             </div>
+           </div> 
+
+        </div>
+        <div class="card-item swiper-slide" role="group" aria-label="8 / 9" data-swiper-slide-index="7" style="width: 305.333px; margin-right: 30px;">
+          <div class="card p-0 border-none">
+               <img src="images/popula-products (19).png" class="card-img-top" alt="..." style="height: 17rem;">
+             <div class="card-body">
+               <h5 class="card-title text-uppercase " style="color:#bbb; ">Men</h5>
+               <p class="card-text" style="color:#100;">Classic Small Logo Sweatpants, black</p>
+               <p class="price" style="color:#bbb;">$450.00</p>
+             </div>
+           </div> 
+
+        </div>
+        <div class="card-item swiper-slide" role="group" aria-label="9 / 9" data-swiper-slide-index="8" style="width: 305.333px; margin-right: 30px;">
+          <div class="card p-0 border-none">
+               <img src="images/popula-products (10).png" class="card-img-top" alt="..." style="height: 17rem;">
+             <div class="card-body">
+               <h5 class="card-title text-uppercase " style="color:#bbb; ">HOODIES</h5>
+               <p class="card-text" style="color:#100;">Classic Small Logo Sweatpants, black</p>
+               <p class="price" style="color:#bbb;">$450.00</p>
+             </div>
+           </div> 
+
+        </div>
+
+        </div>
+
+      <div class="swiper-slide-button swiper-button-prev" style="font-size: small!important;" tabindex="0" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-949191307648df2a"></div>
+      <div class="swiper-slide-button swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-949191307648df2a"></div>
+    
+    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+  </div>
+
+  <!-- Swipper2 brands -->
+  <div class=" container">
+    <div class="title my-3 mt-5 text-center"><p class="text-secondary">TOP BRANDS</p><h1 class="display-5"><b>Popular Brands</b></h1></div>
+    <br>
+   <div class="swiper">
+  
+    <div class="slider-wrapper swiper-initialized swiper-horizontal swiper-backface-hidden">
+      <div class="card-list swiper-wrapper" id="swiper-wrapper-ea9499bedaa83721" aria-live="polite" style="cursor: grab;">
+       
+        <div class="card-item swiper-slide swiper-slide-active" role="group" aria-label="1 / 8" data-swiper-slide-index="0" style="width: 231px; margin-right: 30px;">
+          <div class="card p-0 border-none">
+               <img src="images/brands (1).png" class="card-img-top" alt="..." style="height: 11rem;">
+           </div> 
+        </div>
+        <div class="card-item swiper-slide swiper-slide-next" role="group" aria-label="2 / 8" data-swiper-slide-index="1" style="width: 231px; margin-right: 30px;">
+          <div class="card p-0 border-none">
+               <img src="images/brands (2).png" class="card-img-top" alt="..." style="height: 11rem;">
+           </div> 
+        </div>
+        <div class="card-item swiper-slide" role="group" aria-label="3 / 8" data-swiper-slide-index="2" style="width: 231px; margin-right: 30px;">
+          <div class="card p-0 border-none">
+               <img src="images/brands (3).png" class="card-img-top" alt="..." style="height: 11rem;">
+           </div> 
+        </div>
+        <div class="card-item swiper-slide" role="group" aria-label="4 / 8" data-swiper-slide-index="3" style="width: 231px; margin-right: 30px;">
+          <div class="card p-0 border-none">
+               <img src="images/brands (4).png" class="card-img-top" alt="..." style="height: 11rem;">
+           </div> 
+        </div>
+        <div class="card-item swiper-slide" role="group" aria-label="5 / 8" data-swiper-slide-index="4" style="width: 231px; margin-right: 30px;">
+          <div class="card p-0 border-none">
+               <img src="images/brands (5).png" class="card-img-top" alt="..." style="height: 11rem;">
+           </div> 
+        </div>
+        <div class="card-item swiper-slide" role="group" aria-label="6 / 8" data-swiper-slide-index="5" style="width: 231px; margin-right: 30px;">
+          <div class="card p-0 border-none">
+               <img src="images/brands (6).png" class="card-img-top" alt="..." style="height: 11rem;">
+           </div> 
+        </div>
+        <div class="card-item swiper-slide" role="group" aria-label="7 / 8" data-swiper-slide-index="6" style="width: 231px; margin-right: 30px;">
+          <div class="card p-0 border-none">
+               <img src="images/brands (7).png" class="card-img-top" alt="..." style="height: 11rem;">
+           </div> 
+        </div>
+        <div class="card-item swiper-slide" role="group" aria-label="8 / 8" data-swiper-slide-index="7" style="width: 231px; margin-right: 30px;">
+          <div class="card p-0 border-none">
+               <img src="images/brands (8).png" class="card-img-top" alt="..." style="height: 11rem;">
+           </div> 
+        </div>
+        
+
+        </div>
+
+      <div class="swiper-slide-button swiper-button-prev" style="font-size: small!important;" tabindex="0" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-ea9499bedaa83721"></div>
+      <div class="swiper-slide-button swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-ea9499bedaa83721"></div>
+    
+    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+  </div></div><br><br>
+  <div id="footer" class="text-light p-5" style=" background-color: black;">
+<div class="row ">
+<div class="col-3">
+<h1>Mixtas</h1>
+  <p>Whether you're a trendsetter, a minimalist, or an adventure at heart, Mixtas has 
+    something for everyone. Our diverse range of styles caters to various personas.</p>
+    <div class="d-flex text-light"><i class="border p-3 rounded-circle m-1 fa-brands fa-facebook"></i><i class="border p-3 rounded-circle m-1 fa-brands fa-x-twitter"></i><i class="border p-3 rounded-circle m-1 fa-brands fa-instagram"></i>
+      <i class="border p-3 rounded-circle m-1 fa-brands fa-pinterest"></i>
+    </div>
+  </div>
+<div class="col-2">
+
+    <h5>About Us</h5>
+    <p>Our Story</p>
+    <p>Mission &amp; Values</p>
+    <p>Meet the Team</p>
+    <p>Sustainablility Efforts</p>
+    <p>Brand Partnerships</p>
+    <p>Influencer Collaborations</p>
+
+
+</div>
+<div class="col-2">
+
+  <h5>Accessibility</h5><p>Accessibility Statement</p><p>Site Map</p><p>Web Accessibity Options</p><p>ADA Compliance</p><p>Privacy Policy</p>
+    <p>Terms of Service</p>
+
+</div>
+
+<div class="col-2">
+  <h5>Join Our Community</h5><p>VIP Membership</p><p>Loyalty Program</p>
+  <p>Customer Reviews</p><p>Style Forums</p><p>Job Openings</p>
+  <p>Culture and Values</p></div>
+<div class="col-3"><h4>Let's get in touch</h4><p>Sign up for our newsletter and receive 10% off your</p><input type="email" placeholder="Enter your email address" class="w-100 p-2 rounded"></div>
+</div>
+
+  <hr>
+<div class="d-lg-flex d-md-flex justify-content-between px-4 py-1"><div><p>© 2024 Mixtas All rights reserved. Developed By Apsara Rose Delina</p></div><div><img src="images/footer_logo-B6sl1ycH.png" alt="" height="20"></div></div></div>
+
+
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+ 
+  <script>
+
+
+
+// swipper
+
+const swiper = new Swiper('.slider-wrapper', {
+     loop: true,
+     grabCursor: true,
+     spaceBetween: 30,
+   
+     // Navigation arrows
+     navigation: {
+       nextEl: '.swiper-button-next',
+       prevEl: '.swiper-button-prev',
+     },
+     // Responsive breakpoints
+     breakpoints: {
+       0: {
+         slidesPerView: 1
+       },
+       768: {
+         slidesPerView: 2
+       },
+       1024: {
+         slidesPerView: 3
+       }
+     }
+   });
+   $( document ).ready( filterSelection("all") ); 
+     $( window ).ready( filterSelection("all") );
+// Filter products
+filterSelection("all")
+var products=document.getElementById('data');
+badge=productList.filter(p =>p.Productname=="hoodie");
+    document.getElementById('badge1').innerHTML=badge.length;
+    badge=productList.filter(p =>p.Productname=="men");
+    document.getElementById('badge2').innerHTML=badge.length;
+    badge=productList.filter(p =>p.Productname=="jacket");
+    document.getElementById('badge3').innerHTML=badge.length;
+    badge=productList.filter(p =>p.Productname=="sweatshirt");
+    document.getElementById('badge4').innerHTML=badge.length;
+    badge=productList.filter(p =>p.Productname=="others");
+    document.getElementById('badge5').innerHTML=badge.length;
+function filterSelection(c) {
+  var x, i, badge;
+
+  x = document.getElementsByClassName("filterDiv");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="cart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+
+
+<span id="PING_IFRAME_FORM_DETECTION" style="display: none;"></span></body></html>

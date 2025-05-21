@@ -1,0 +1,294 @@
+.navbar a
+{
+color: #000 !important;
+font-size: 1rem;
+text-transform: uppercase;
+font-weight:400;
+margin: 1rem 1rem 0 1rem;
+}
+.carousel-caption
+{
+top: 10%!important;
+right: 0!important;
+left: 9%!important;
+
+} 
+
+
+/* .btn:hover
+{
+background-color: #fff;
+color: #000;
+}
+.list-group li
+{
+    border: none!important;
+    background-color: blue;
+} */
+
+
+.filterDi{
+ 
+    display: flex;
+    flex-wrap: wrap;
+   
+   }  
+       .filterDiv {
+     
+   
+     margin: 1rem;
+     display: none;
+   }
+   #myBtnContainer
+   {
+       display: flex;
+       flex-direction: column;
+       background-color: #fff!important;
+       border: #666 1px solid;
+       
+   }
+   .card-body li
+           {
+          
+               border: none;
+              
+   }
+   .card-title
+   {
+       font-weight:normal!important;
+   }
+   .show {
+     display: block;
+     border: 1px!important;
+   }
+       .accordion-body
+       {
+           padding: 0;
+       }
+       .list-group
+           {
+          
+               margin: 0;
+               border: rgb(172, 172, 172) ;
+           }
+           
+ #acbtn
+ {
+  border: #000 1px solid;
+ }
+   #myBtnContainer .btn {
+     border: none;
+     outline: none;
+     padding: 12px 20px;
+     background-color: #fff!important;
+     cursor: pointer;
+     text-transform: uppercase;
+     text-align: start;
+   }
+   
+   #myBtnContainer .btn:hover {
+     border: none;
+     outline: none;
+     padding: 12px 20px;
+     background-color: rgb(235, 233, 233)!important;
+     cursor: pointer;
+     text-transform: uppercase;
+     text-align: start;
+     box-shadow:none!important;
+   }
+   .accordion-button
+   {
+   border: rgb(151, 149, 149) solid 1px;
+   box-shadow:none!important;
+   }
+   .accordion-button:not(.collapsed) {
+    color: #666!important;
+      background-color: #fff!important;
+      box-shadow:none!important;
+      border: rgb(151, 149, 149) solid 1px;
+  }
+   #myBtnContainer .btn.active {
+     background-color: #666;
+     box-shadow:none!important;
+     
+   }
+   
+   .hide-icons
+   {
+   
+     position: absolute;
+    right: 5px;
+     top: 0px;
+     z-index: 1;
+     cursor: pointer;
+     display: flex!important;
+     flex-direction: column;
+    color:  rgba(0, 0, 0, 0);
+   
+   } 
+ 
+   #card:hover .bicon
+   {
+    color: rgb(255, 253, 253);
+    background-color: rgba(143, 140, 140, 0.699);
+   
+   } 
+ 
+ .bicon
+ {
+  margin-top: 20px;
+  border-radius: 50%;
+  width: 35px!important;
+  height: 35px!important;
+  padding: 6px 10px 13px 10px;
+  /* background-color: #fff; */
+  
+  text-align: center;
+  
+   }
+ 
+   .modal {
+   
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 15px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(31 29 29 / 67%)!important; /* Black w/ opacity */
+  }
+  @media (min-width: 576px)
+  {
+.modal-dialog {
+    max-width: 60rem!important;
+    margin: 1.75rem auto;
+}}
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+ 
+
+/*   
+   /* .offcanvas
+   {
+    /* height: 600px;
+    width: 360px!important; 
+    margin-top: 1rem;
+   } */ 
+
+
+   .list-group-item+.list-group-item 
+   {
+     border-top-width: 1px!important;
+ }
+ .offcanvas-footer {
+  display: flex;
+
+
+  margin-bottom: 32px;
+  
+
+ 
+}
+
+
+   .swiper{
+    width: 80%;
+   } 
+   
+.slider-wrapper {
+  overflow: hidden;
+
+  margin: 0 70px 55px;
+}
+
+
+
+.card-list .card-item .user-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 40px;
+  border: 3px solid #fff;
+  padding: 4px;
+}
+
+.card-list .card-item .user-profession {
+  font-size: 1.15rem;
+  color: #e3e3e3;
+  font-weight: 500;
+  margin: 14px 0 40px;
+}
+
+.card-list .card-item .message-button {
+  font-size: 1.25rem;
+  padding: 10px 35px;
+  color: #030728;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid transparent;
+  transition: 0.2s ease;
+}
+
+.card-list .card-item .message-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+
+.slider-wrapper .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+.slider-wrapper .swiper-slide-button {
+  color: rgb(114, 113, 113);
+  background-color: #e2dcdc;
+  border-radius: 50%;
+  padding: 0 22px;
+  margin-top: -55px;
+  transition: 0.2s ease;
+}
+
+.slider-wrapper .swiper-slide-button:hover {
+  color: rgb(216, 213, 213);
+  background-color: #615d5d;
+}
+
+@media (max-width: 768px) {
+  .slider-wrapper {
+    margin: 0 10px 40px;
+  }
+
+  .slider-wrapper .swiper-slide-button {
+    display: none;
+  }
+}
+.swiper-button-next:after, .swiper-button-prev:after {
+  
+  font-size: small!important;
+}
